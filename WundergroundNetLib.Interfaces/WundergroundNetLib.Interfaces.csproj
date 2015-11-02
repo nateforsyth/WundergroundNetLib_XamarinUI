@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ICurrentConditions.cs" />
     <Compile Include="IDataProvider.cs" />
+    <Compile Include="IForecast.cs" />
     <Compile Include="IObservationLocation.cs" />
     <Compile Include="IWeatherData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,7 +13,7 @@ namespace WundergroundNetLib
         public ObservationLocation observationLocation { get; set; }
         public CurrentConditions currentConditions { get; set; }
 
-        public List<IForecast> fourDayForecast { get; set; }
+        public List<Forecast> fourDayForecast { get; set; }
     }
 
     public class ObservationLocation : IObservationLocation
@@ -49,7 +49,7 @@ namespace WundergroundNetLib
         public string Sunset { get; set; } // sun_phase / sunset etc
     }
 
-    public class Forecast
+    public class Forecast : IForecast
     {
         public string Day { get; set; }  // simpleforecast / forecastday / date / weekday_short
         public DateTime Date { get; set; } // simpleforecast / forecastday / date / year, month, day
