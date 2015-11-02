@@ -10,10 +10,10 @@ namespace WundergroundNetLib
 {
     public class WeatherData : IWeatherData
     {
-        public ObservationLocation observationLocation { get; set; }
-        public CurrentConditions currentConditions { get; set; }
+        public IObservationLocation observationLocation { get; set; }
+        public ICurrentConditions currentConditions { get; set; }
 
-        public List<Forecast> fourDayForecast { get; set; }
+        public List<IForecast> fourDayForecast { get; set; }
     }
 
     public class ObservationLocation : IObservationLocation

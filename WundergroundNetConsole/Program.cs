@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WundergroundNetLib;
+using WundergroundNetLib.Interfaces;
 
 namespace WundergroundNetConsole
 {
@@ -11,7 +12,7 @@ namespace WundergroundNetConsole
     {
         static void Main(string[] args)
         {
-            DataProvider dataProvider = new DataProvider();
+            IDataProvider dataProvider = new DataProvider();
             //var WeatherData = dataProvider.GetCombinedDataAsync("-43.506923", "172.731346");
             //var WeatherData = dataProvider.GetCombinedDataAsync("ICANTERB275");
             var WeatherData = dataProvider.GetCombinedDataAsync(-43.506923, 172.731346);

@@ -4,8 +4,8 @@ namespace WundergroundNetLib.Interfaces
 {
     public interface IDataProvider
     {
-        Task<WeatherData> GetCombinedDataAsync(string stationID);
-        Task<WeatherData> GetCombinedDataAsync(string latitude, string longitude);
-        Task<WeatherData> GetCombinedDataAsync(double latitude, double longitude);
+        Task<IWeatherData> GetCombinedDataAsync(string stationID);
+        Task<IWeatherData> GetCombinedDataAsync(string latitude, string longitude);
+        Task<IWeatherData> GetCombinedDataAsync(double latitude, double longitude);
     }
 }

@@ -4,8 +4,8 @@ namespace WundergroundNetLib.Interfaces
 {
     public interface IWeatherData
     {
-        CurrentConditions currentConditions { get; set; }
+        ICurrentConditions currentConditions { get; set; }
         List<IForecast> fourDayForecast { get; set; }
-        ObservationLocation observationLocation { get; set; }
+        IObservationLocation observationLocation { get; set; }
     }
 }

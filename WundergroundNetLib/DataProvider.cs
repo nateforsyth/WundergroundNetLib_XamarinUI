@@ -15,7 +15,7 @@ namespace WundergroundNetLib
         /// <param name="location"></param>
         /// <param name="dataFeatures"></param>
         /// <returns></returns>
-        public async Task<WeatherData> GetCombinedDataAsync(string latitude, string longitude)
+        public async Task<IWeatherData> GetCombinedDataAsync(string latitude, string longitude)
         {
             UriProvider uriProvider = new UriProvider();
             Uri pwsUri = uriProvider.CreateCombinedDataUriFromCoordinates(latitude, longitude);
@@ -29,7 +29,7 @@ namespace WundergroundNetLib
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
         /// <returns></returns>
-        public async Task<WeatherData> GetCombinedDataAsync(double latitude, double longitude)
+        public async Task<IWeatherData> GetCombinedDataAsync(double latitude, double longitude)
         {
             UriProvider uriProvider = new UriProvider();
             Uri pwsUri = uriProvider.CreateCombinedDataUriFromCoordinates(latitude, longitude);
@@ -42,7 +42,7 @@ namespace WundergroundNetLib
         /// </summary>
         /// <param name="stationID"></param>
         /// <returns></returns>
-        public async Task<WeatherData> GetCombinedDataAsync(string stationID)
+        public async Task<IWeatherData> GetCombinedDataAsync(string stationID)
         {
             UriProvider uriProvider = new UriProvider();
             Uri pwsUri = uriProvider.CreateCombinedDataUriFromPwsStationID(stationID);
@@ -54,7 +54,7 @@ namespace WundergroundNetLib
         /// </summary>
         /// <param name="pwsUri"></param>
         /// <returns></returns>
-        private async Task<WeatherData> CombinedWeatherDataAsync(Uri pwsUri)
+        private async Task<IWeatherData> CombinedWeatherDataAsync(Uri pwsUri)
         {
             // Download Json data
             JsonProvider jsonProvider = new JsonProvider();
