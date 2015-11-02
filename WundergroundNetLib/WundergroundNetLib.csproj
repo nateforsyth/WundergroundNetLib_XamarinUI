@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="IDataProvider.cs" />
     <Compile Include="JsonDeserializer.cs" />
     <Compile Include="WeatherData.cs" />
     <Compile Include="JsonProvider.cs" />
@@ -77,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="keys\WundergroundApiKey.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WundergroundNetLib.Interfaces\WundergroundNetLib.Interfaces.csproj">
+      <Project>{e8746b6d-72d9-4152-ba6d-28007a594c13}</Project>
+      <Name>WundergroundNetLib.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

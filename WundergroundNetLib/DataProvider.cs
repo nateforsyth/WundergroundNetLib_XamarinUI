@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using WundergroundNetLib.Interfaces;
 
 namespace WundergroundNetLib
 {
-    public class DataProvider
+    public class DataProvider : IDataProvider
     {
         /// <summary>
         /// Get the combined json file including conditions, forecast and astronomy data and deserialise into 
