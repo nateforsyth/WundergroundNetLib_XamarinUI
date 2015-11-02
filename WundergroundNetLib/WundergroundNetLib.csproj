@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
-    <Compile Include="IDataProvider.cs" />
     <Compile Include="JsonDeserializer.cs" />
     <Compile Include="WeatherData.cs" />
     <Compile Include="JsonProvider.cs" />

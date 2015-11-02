@@ -27,7 +27,7 @@ namespace WundergroundNetLib
         public int WmoNumber { get; set; } // wmo : "93780" / display_location
     }
 
-    public class CurrentConditions
+    public class CurrentConditions : ICurrentConditions
     {
         public DateTime ObservationTime { get; set; } // observation_time_rfc822 : "Fri, 30 Oct 2015 07:56:47 +1300"
         public string CurrentDescription { get; set; } // weather : "Rain"
