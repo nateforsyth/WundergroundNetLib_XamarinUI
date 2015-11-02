@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using WundergroundNetLib.Interfaces;
+
 namespace WundergroundNetLib
 {
     public class WeatherData : IWeatherData
     {
         public ObservationLocation observationLocation { get; set; }
         public CurrentConditions currentConditions { get; set; }
-        public List<Forecast> fourDayForecast = new List<Forecast>();
+
+        public List<IForecast> fourDayForecast { get; set; }
     }
 
-    public class ObservationLocation
+    public class ObservationLocation : IObservationLocation
     {
         public string City { get; set; } // city : "Christchurch" / display_location
         public string Country { get; set; } // country_iso3166 : "NZ" / observation_location
