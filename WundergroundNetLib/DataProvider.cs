@@ -7,6 +7,28 @@ namespace WundergroundNetLib
 {
     public class DataProvider : IDataProvider
     {
+        private static DataProvider _provider = null; // singleton for minimal resource usage
+
+        /// <summary>
+        /// Static singleton class instantiating a DataProvider where none exist at the point of retrieval ensuring only one instance is created within scope, when required.
+        /// </summary>
+        public static DataProvider DefaultProvider
+        {
+            get
+            {
+                if (_provider == null)
+                {
+                    _provider = new DataProvider();
+                }
+                return _provider;
+            }
+        }
+
+        private DataProvider() // ensure that we can instantiate a new DataProvider within Static constructor
+        {
+
+        }
+
         /// <summary>
         /// Get the combined json file including conditions, forecast and astronomy data and deserialise into 
         /// customised weather data classes using your string coordinates, executed as an asynchronous operation.
