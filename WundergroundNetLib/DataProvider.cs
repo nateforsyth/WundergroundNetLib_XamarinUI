@@ -7,26 +7,21 @@ namespace WundergroundNetLib
 {
     public class DataProvider : IDataProvider
     {
-        private static DataProvider _provider = null; // singleton for minimal resource usage
+        private static readonly DataProvider _provider = new DataProvider();
+
+        static DataProvider() { }
+
+        private DataProvider() { }
 
         /// <summary>
-        /// Static singleton class instantiating a DataProvider where none exist at the point of retrieval ensuring only one instance is created within scope, when required.
+        /// Static thread safe singleton class instantiating a DataProvider where none exist at the point of retrieval ensuring only one instance is created within scope, when required.
         /// </summary>
         public static DataProvider DefaultProvider
         {
             get
             {
-                if (_provider == null)
-                {
-                    _provider = new DataProvider();
-                }
                 return _provider;
             }
-        }
-
-        private DataProvider() // ensure that we can instantiate a new DataProvider within Static constructor
-        {
-
         }
 
         /// <summary>
